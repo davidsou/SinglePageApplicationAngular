@@ -1,0 +1,12 @@
+.main{
+    display:flex;
+    background-color: lightblue;
+   
+    
+    overflow: hidden;
+}
+
+.content{
+    width: 100%;
+    padding-top: 20px;
+}
