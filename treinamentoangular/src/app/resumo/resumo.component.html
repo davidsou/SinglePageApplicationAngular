@@ -1,0 +1,29 @@
+<app-painel-simples  titulo= "Consultas Marcadas Últimos 30 dias" col ="6" >
+  <h3 class="text-center">{{resumo.consultas.anteriores.total}}</h3>
+</app-painel-simples>
+
+<app-painel-simples  titulo= "Consultas Marcadas Proximos 30 dias" col ="6" >
+  <h3 class="text-center">{{resumo.consultas.marcadas.total}}</h3>
+</app-painel-simples>
+
+<app-painel-simples col="6" titulo= "Faturamento Anterior" col ="6" >
+  <div class="box-faturamento">
+    <div class="col-md-10">
+      <h1 class="text-left">{{resumo.faturamento.anterior.valor}}</h1>
+    </div>
+    <div class="alert col-md-2 sm alert-danger">
+      <b>10%</b>
+    </div>
+  </div>
+</app-painel-simples>
+
+<app-painel-simples col="6" titulo= "Faturamento Previsão" col ="6" >
+  <div class="box-faturamento">
+    <div class="col-md-10">
+      <h1 class="text-left">{{resumo.faturamento.previsao.valor}}</h1>
+    </div>
+    <div class="alert col-md-2 sm alert-success">
+      <b>19%</b>
+    </div>
+  </div>
+</app-painel-simples>
