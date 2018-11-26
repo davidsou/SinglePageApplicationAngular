@@ -9,6 +9,7 @@ export class ConsultaPorEspecialidadeComponent implements OnInit {
 
   @Input() consultas;
   @Input() titulo;
+  @Input() erro;
   constructor() { }
 
   ngOnInit() {

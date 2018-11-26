@@ -1,44 +1,28 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { ResumoService } from './resumo.service';
+
 
 @Component({
   selector: 'app-resumo',
   templateUrl: './resumo.component.html',
   styleUrls: ['./resumo.component.css']
 })
-export class ResumoComponent implements OnInit {
-  
-  resumo = {
-      consultas : {
-        anteriores : {
-          total : 87,
-          detalhes : [
-              { especialidade : "Cardiologia", quantidade : 20 },
-              { especialidade : "Clínica Geral", quantidade : 30 },
-           ]
-         },
-         marcadas : {
-           total : 79,
-           detalhes : [
-               { especialidade : "Cardiologia", quantidade : 19 },
-               { especialidade : "Clínica Geral", quantidade : 28 },
-           ]
-         }
-       },
-       faturamento : {
-         anterior : {
-           valor : 100000,
-           comparativo : 19
-         },
-         previsao : {
-           valor : 90000,
-           comparativo : -10 
-         }
-       }
-     };
+export class ResumoComponent implements OnInit, OnDestroy {
 
-  constructor() { }
+  resumo ;
+  inscricao;
+
+  constructor(private resumoService: ResumoService) {
+  
+   }
 
   ngOnInit() {
+    this.inscricao = this.resumoService.getResumo()
+    .subscribe(dados => this.resumo = dados);
+  }
+
+  ngOnDestroy(){
+    this.inscricao.unsubscribe();
   }
 
 }
